@@ -17,7 +17,7 @@ from blog_entry.post_serializers import ModelSerializer
 #@cache_page(60 * 15)
 def index(request):
 	cache.set("Milan" , "This is a dummy string showing the Redis cache")
-	redis_cache_data = cache.get("Sankalp")
+	redis_cache_data = cache.get("Milan")
 	if redis_cache_data is None :
 		redis_cache_data = "Could Not retrieve from the Redis Cache"
 	all_posts = Entry.objects.all()[:5]
