@@ -15,4 +15,16 @@ The main aim of this blog is to fetch the latest news and photos of a celebrity.
   * [Git](http://git-scm.com/): its a disitributed version control system.
   * [Redis](redis.io): Redis is an open-source, networked, in-memory, key-value data store with optional durability. 
 
-Now we know the components in use, so now I can explain how they work togheter. I'm using Django Rest API to provide the data stored in models to the frontend anfularj view. There is a python script that runs at regular intervals to fetch the latest news feeds about Mr. Narendra Modi and store it in the database. The frontend uses bootstrap template and few other scripts. In this project, the news data is bieng grabbed using the feeds from Google News. Redis has been used for holding the database in memory.
+Now we know the components in use, so now I can explain how they work togheter. I'm using Django Rest API to provide the data stored in models to the frontend anfularj view. There is a python script that runs at regular intervals to fetch the latest news feeds about Mr. Narendra Modi and store it in the database. The frontend uses bootstrap template and few other scripts. In this project, the news data is bieng grabbed using the feeds from Google News. Redis has been used for holding the database in memory. 
+The database comprises of entry table that has three entries (title,body and GUID for uniquely identify a post).
+The Index is the main view which displays the blog. Other than this restful view displays the all post (/posts) and individual posts (posts/guid) using routing.
+
+An opensource template was used to make the frontend of the blog. The carousel loops through each post fetched from the database. Redis has been used to provide database cache.
+
+###The UI
+
+The Opening page comprises of different tabs (Home, About, SourceCode, Blog Entries and Contact)
+Clicking on 'Blog Entries' will take you directly to the news posts.
+
+Here is the link to the blog: [The Narendra Modi Blog](http://4e6c6600.ngrok.com/)
+
